@@ -164,4 +164,21 @@ require get_template_directory() . '/inc/BFI_Thumb.php';
  */
 require get_template_directory() . '/inc/wp_bootstrap_navwalker.php';
 
+/**
+ * Load bootstrap pagination
+ */
+require get_template_directory() . '/inc/wp_bootstrap_pagination.php';
+
+function customize_wp_bootstrap_pagination($args) {
+
+    $args['previous_string'] = 'previous';
+    $args['next_string'] = 'next';
+
+    return $args;
+}
+add_filter('wp_bootstrap_pagination_defaults', 'customize_wp_bootstrap_pagination');
+
+
+
+
 

@@ -119,3 +119,12 @@ function toasttheme_category_transient_flusher() {
 }
 add_action( 'edit_category', 'toasttheme_category_transient_flusher' );
 add_action( 'save_post',     'toasttheme_category_transient_flusher' );
+
+/* ==========================================================================
+New post navigation
+========================================================================== */
+function toasttheme_post_navigation(){
+	if ( function_exists('wp_bootstrap_pagination') )
+	wp_bootstrap_pagination();
+}
+
