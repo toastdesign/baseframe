@@ -22,3 +22,22 @@ function toasttheme_body_classes( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', 'toasttheme_body_classes' );
+
+/* ==========================================================================
+BFI Function
+<img src="<?php echo toast_img('full', 300, 400);?>" />
+style="background-image:url('<?php echo toast_img('full', 300, 400); ?>');"
+========================================================================== */
+
+function toast_img( $thumb_size, $image_width, $image_height ) {
+ 
+  global $post;
+ 
+  $params = array( 'width' => $image_width, 'height' => $image_height );
+   
+  $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID, '' ), $thumb_size );
+  $custom_img_src = bfi_thumb( $imgsrc[0], $params );
+   
+  return $custom_img_src;
+   
+}
