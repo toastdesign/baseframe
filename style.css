@@ -331,6 +331,9 @@ img {
   max-width: 100%;
   /* Adhere to container width. */ }
 
+figure {
+  margin: 1em 0; }
+
 table {
   margin: 0 0 1.5em;
   width: 100%; }
@@ -566,6 +569,58 @@ a {
 /* Search widget. */
 .widget_search .search-submit {
   display: none; }
+
+/* ==========================================================================
+Base widget styles
+========================================================================== */
+.widget .widget-title {
+  padding: 10px 15px;
+  font-size: 19px;
+  font-size: 1.9rem;
+  margin: 0;
+  background-color: #dedede; }
+
+.widget {
+  border: 1px solid #eee; }
+  .widget ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; }
+    .widget ul li {
+      border-top: 1px solid #dedede;
+      position: relative; }
+      .widget ul li a {
+        display: block;
+        padding: 10px 15px; }
+        .widget ul li a:after {
+          content: "\f054";
+          font-family: FontAwesome;
+          right: 5px;
+          position: absolute; }
+        .widget ul li a:hover {
+          text-decoration: none;
+          background-color: #eee; }
+      .widget ul li ul {
+        display: none; }
+      .widget ul li.page_item_has_children > a:after {
+        content: "\f078"; }
+      .widget ul li.page_item_has_children:hover > ul {
+        display: block; }
+
+.widget_rss .rss-date,
+.widget_rss .rssSummary,
+.widget_rss cite {
+  padding: 10px;
+  display: block; }
+.widget_rss .rss-date {
+  font-size: small;
+  padding: 0 10px; }
+
+.widget_text .textwidget {
+  padding: 15px; }
+
+.widget_tag_cloud .tagcloud {
+  padding: 15px; }
 
 /*--------------------------------------------------------------
 # Content

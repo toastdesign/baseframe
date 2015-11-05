@@ -70,3 +70,21 @@ function content($limit) {
   $content = str_replace(']]>', ']]&gt;', $content);
   return $content;
 }
+
+/* ==========================================================================
+Function to include count inside link tag
+========================================================================== */
+/* This code filters the Categories archive widget to include the post count inside the link */
+add_filter('wp_list_categories', 'cat_count_span');
+function cat_count_span($links) {
+  $links = str_replace('</a> (', ' (', $links);
+  $links = str_replace(')', ')</a>', $links);
+  return $links;
+}
+/* This code filters the Archive widget to include the post count inside the link */
+add_filter('get_archives_link', 'archive_count_span');
+function archive_count_span($links) {
+  $links = str_replace('</a>&nbsp;(', ' (', $links);
+  $links = str_replace(')', ')</a>', $links);
+  return $links;
+}

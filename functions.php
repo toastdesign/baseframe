@@ -104,8 +104,8 @@ function toasttheme_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
 	) );
 }
 add_action( 'widgets_init', 'toasttheme_widgets_init' );
@@ -114,7 +114,9 @@ add_action( 'widgets_init', 'toasttheme_widgets_init' );
  * Enqueue scripts and styles.
  */
 function toasttheme_scripts() {
-	wp_enqueue_style( 'toasttheme-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'toasttheme-style', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css');
+
+	wp_enqueue_style( 'toasttheme-fontawesome', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'toasttheme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 

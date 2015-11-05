@@ -11,3 +11,90 @@
 .widget_search .search-submit {
 	display: none;
 }
+
+
+/* ==========================================================================
+Base widget styles
+========================================================================== */
+.widget {
+	.widget-title {
+		padding:10px 15px;
+		@include font-size(1.9);
+		margin:0;
+		background-color: #dedede;
+	}
+}
+
+
+.widget {
+	border:1px solid #eee;
+
+	// base lists
+	ul {
+		list-style: none;
+		padding:0;
+		margin:0;
+		
+		li {
+			border-top: 1px solid #dedede;
+			position: relative;
+			
+			a {
+				display:block;
+				padding:10px 15px;
+				&:after {
+					content: "\f054";
+				    font-family: FontAwesome;
+				    right:5px;
+				    position:absolute;
+				}
+				&:hover {
+					text-decoration: none;
+					background-color: #eee;
+				}
+			}
+
+			ul {
+				display:none;
+			}
+
+			&.page_item_has_children {
+				> a:after {
+					content: "\f078";
+				}
+				&:hover {
+					> ul {
+						display:block;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+.widget_rss {
+	.rss-date,
+	.rssSummary,
+	cite {
+		padding:10px;
+		display: block;
+	}
+
+	.rss-date {
+		font-size: small;
+		padding:0 10px;
+	}
+}
+
+.widget_text {
+	.textwidget {
+		padding:15px;
+	}
+}
+
+.widget_tag_cloud {
+	.tagcloud {
+		padding:15px;
+	}
+}
